@@ -39,5 +39,6 @@ void push(stack_t **head, unsigned int number);
 void pall(stack_t **head, unsigned int number);
 void pint(stack_t **head, unsigned int number);
 stack_t *add_node(stack_t **stack, int n);
+void free_and_close(char *line, FILE *file);
 
 #endif
