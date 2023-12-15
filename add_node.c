@@ -1,27 +1,28 @@
 #include "monty.h"
 
 /**
- * add_node - function that adds a new node at the beginning of a doubly linked list.
+ * add_node - function that adds a new node at the beginning
+ *	of a doubly linked list.
  * @stack: Pointer to a pointer to the stack.
  * @n: Value to add to the stack.
  * Return: The address of the new node or NULL.
  */
 stack_t *add_node(stack_t **stack, int n)
 {
-    stack_t *node;
+	stack_t *node;
 
-    node = malloc(sizeof(stack_t));
-    if (node == NULL)
-        return (NULL);
+	node = malloc(sizeof(stack_t));
+	if (node == NULL)
+		return (NULL);
 
-    node->n = n;
-    node->prev = NULL;
-    node->next = *stack;
+	node->n = n;
+	node->prev = NULL;
+	node->next = *stack;
 
-    if (*stack != NULL)
-        (*stack)->prev = node;
+	if (*stack != NULL)
+		(*stack)->prev = node;
 
-    *stack = node;
+	*stack = node;
 
-    return (node);
+	return (node);
 }
