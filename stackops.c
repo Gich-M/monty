@@ -20,13 +20,13 @@ void free_stack(stack_t *head)
 }
 
 /**
-* stack - prints the top
+* _stack - prints the top
 * @head: pointer to top of the stack
 * @counter: line_number
 *
 * Return: void
 */
-void stack(stack_t **head, unsigned int counter)
+void _stack(stack_t **head, unsigned int counter)
 {
 	(void)head;
 	(void)counter;
