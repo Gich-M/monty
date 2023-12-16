@@ -105,7 +105,7 @@ void mul(stack_t **head, unsigned int counter)
 *
 * Return: void
 */
-void div(stack_t **head, unsigned int counter)
+void divs(stack_t **head, unsigned int counter)
 {
 	stack_t *h;
 	int length = 0, temp;
