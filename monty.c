@@ -15,10 +15,9 @@ bus_t bus = {NULL, NULL, NULL, 0};
 */
 int main(int argc, char *argv[])
 {
-	char *data;
+	char *content = NULL;
 	FILE *file;
 	size_t size = 0;
-	ssize_t read_line = 1;
 	stack_t *stack = NULL;
 	unsigned int counter = 0;
 
@@ -34,20 +33,15 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	while (read_line > 0)
+	while (fgets(content, size, file) != NULL)
 	{
-		data = NULL;
-		read_line = getline(&data, &size, file);
-		bus.content = data;
+		bus.content = content;
 		counter++;
-		if (read_line > 0)
-		{
-			execute(data, &stack, counter, file);
-		}
-		free(data);
+		execute(content, &stack, counter, file);
 	}
 	free_stack(stack);
 	fclose(file);
-return (0);
+	free(content);
+	return (0);
 }
 
