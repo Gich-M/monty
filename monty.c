@@ -1,8 +1,6 @@
 #include "monty.h"
-#include <stdio.h>
-#define _GNU_SOURCE
-#include <stdlib.h>
-#include <string.h>
+
+#define MAX_LINE_LENGTH 1024
 
 bus_t bus = {NULL, NULL, NULL, 0};
 
@@ -15,9 +13,9 @@ bus_t bus = {NULL, NULL, NULL, 0};
 */
 int main(int argc, char *argv[])
 {
-	char *content = NULL;
 	FILE *file;
-	size_t size = 0;
+	size_t size = MAX_LINE_LENGTH;
+	char *content = malloc(size);
 	stack_t *stack = NULL;
 	unsigned int counter = 0;
 
